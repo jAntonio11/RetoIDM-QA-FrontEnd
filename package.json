@@ -1,0 +1,26 @@
+{
+  "name": "qa-frontend-playwright",
+  "version": "1.0.0",
+  "description": "Pruebas automatizadas de Sauce Demo con Playwright, Cucumber y TypeScript",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "cucumber-js",
+    "test:smoke": "cucumber-js --tags @smoke",
+    "test:headed": "cross-env HEADLESS=false SLOWMO=300 cucumber-js",
+    "test:paralelo": "cucumber-js --parallel 3",
+    "test:firefox": "cross-env NAVEGADOR=firefox cucumber-js",
+    "typecheck": "tsc --noEmit",
+    "navegadores": "playwright install chromium firefox"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^13.2.1",
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^22.10.0",
+    "cross-env": "^7.0.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

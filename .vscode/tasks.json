@@ -1,0 +1,51 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Front: ejecutar suite completa",
+      "type": "shell",
+      "command": "npm",
+      "args": ["test"],
+      "group": { "kind": "test", "isDefault": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "Front: ejecutar viendo el navegador",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "test:headed"],
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Front: ejecutar pruebas de humo (@smoke)",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "test:smoke"],
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Front: ejecutar usuario bloqueado (@locked_out_user)",
+      "type": "shell",
+      "command": "npx",
+      "args": ["cucumber-js", "--tags", "@locked_out_user"],
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Front: revisar tipos TypeScript",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "typecheck"],
+      "problemMatcher": ["$tsc"]
+    },
+    {
+      "label": "Front: abrir reporte",
+      "type": "shell",
+      "command": "open reports/cucumber-report.html",
+      "windows": { "command": "start reports\\cucumber-report.html" },
+      "problemMatcher": []
+    }
+  ]
+}

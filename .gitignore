@@ -1,0 +1,9 @@
+node_modules/
+reports/
+test-results/
+dist/
+.env
+.idea/
+.antigravity/
+*.log
+.DS_Store
